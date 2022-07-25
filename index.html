@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        
+
+      "use strict";
+
+const obj = {
+  arrayy: [1, 2, 2, 4],
+  arrayy2: [5, 6, 7, 8]
+};
+const arrobj = obj.arrayy.map((test, i) => ({
+  id: i,
+  title: test
+}));
+
+function App() {
+  var present = prompt("ادخل الكلمة التي تريد تحويلها الى اسم فاعل");
+  var newstr;
+
+  if (/[\u0600-\u06FF]/.test(present) == true) {
+    var newstr = " اسم الفاعل:" + [" م", present].join(''); // document.write(" اسم الفاعل:" + [" م",present].join(''));
+  } else {
+    newstr = "خطا";
+  }
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, " ", newstr));
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render( /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(App, null)));
+            
+    </script>
+</body>
+</html>
